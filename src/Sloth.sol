@@ -7,24 +7,6 @@ import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "./interface/ISloth.sol";
 
-// User can connect metamask 
-// User can mint a sNFT either by USDC or USDC
-// User can redeem the input asset by burning his sNFT 
-// [non-essential]
-// User can send sNFT to another wallet 
-// User can send tokens and sNFT to another wallet 
-// [UNIC]
-// User can scan a minted sNFT to verify authenticity 
-
-/*
-//                           ***DEMO***
-//  This contract has only two functions, mintWithTenUSD() and redeem().
-//  mintWithTenUSD(): User can mint by paying 10 USD
-//  redeem(): redeem USD they paid, and return NFT to this contract
-//  * In Demo,
-//  * 1. Only USDC is used
-//  * 2. After redeem, NFT is lock into contract.
-*/ 
 contract Sloth is ISloth, ERC721{
 
     using SafeERC20 for IERC20;
@@ -59,9 +41,9 @@ contract Sloth is ISloth, ERC721{
     address public immutable USDT;
     address public immutable USDC;
     
-    event totalSupplyAdded(uint256);
-    event mintNFT_FiftyUSD(address owner, uint256 tokenId);
-    event mintNFT_TenUSD(address owner, uint256 tokenId);
+    // event totalSupplyAdded(uint256);
+    // event mintNFT_FiftyUSD(address owner, uint256 tokenId);
+    // event mintNFT_TenUSD(address owner, uint256 tokenId);
 
     constructor(address _USDC, address _USDT) ERC721("Stablen",  "STB") {
         require(_USDC != address(0), "USDC is ZERO ADDRESS");
